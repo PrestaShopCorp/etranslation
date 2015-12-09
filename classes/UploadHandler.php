@@ -798,7 +798,7 @@ class UploadHandler
 
     protected function imagick_orient_image($image) {
         $orientation = $image->getImageOrientation();
-        $background = new \ImagickPixel('none');
+        $background = new ImagickPixel('none');
         switch ($orientation) {
             case \imagick::ORIENTATION_TOPRIGHT: // 2
                 $image->flopImage(); // horizontal flop around y-axis

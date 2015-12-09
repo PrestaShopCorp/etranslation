@@ -56,7 +56,8 @@
 </header>
 <div >
 		<!-- Left side column. contains the logo and sidebar -->
-<img src="../modules/etranslation/views/img/biglogo.png" />
+<img src="../modules/etranslation/views/img/biglogo.png" style="margin-left:5%"/>
+<img src="../modules/etranslation/views/img/Official_prestashop_partner.jpg" style="margin-left:43%"/>
 <br/>
 
 
@@ -240,7 +241,6 @@
 										<option value="3">CMS</option>
 										<option value="5">Attributs and values</option>
 										<option value="6">Features</option>
-										<option value="4">Carrousels</option>
 									</select>
 								</div>
 								<div class="form-group">
@@ -271,6 +271,9 @@
 										<div>
 											<input name="columns_to_translate[]" value="meta_keywords" type="checkbox"> Meta Keywords<br>
 										</div>
+									</div>
+									<div style="margin-left:23%;">
+										<iframe align="right" src="//www.youtube.com/embed/SI5getoiuVA?wmode=opaque" allowfullscreen="allowfullscreen" frameborder="0" id="fitvid81558"></iframe>
 									</div>
 								</div>
 

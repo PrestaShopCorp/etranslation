@@ -56,7 +56,8 @@
 </header>
 <div >
 		<!-- Left side column. contains the logo and sidebar -->
-<img src="../modules/etranslation/views/img/biglogo.png" />
+<img src="../modules/etranslation/views/img/biglogo.png" style="margin-left:5%"/>
+<img src="../modules/etranslation/views/img/Official_prestashop_partner.jpg" style="margin-left:43%"/>
 <br/>
 
 
@@ -229,6 +230,9 @@
 													<input name="export_dest_lang_id[]" value="Vietnamien" type="checkbox"> Vietnamien (VI)<br>
 												</div>
 											</div>
+											<div style="margin-left:23%;">
+												<iframe align="right" src="//www.youtube.com/embed/SI5getoiuVA?wmode=opaque" allowfullscreen="allowfullscreen" frameborder="0" id="fitvid81558"></iframe>
+											</div>
 								</div>
 							</div>
 								<div class="form-group">
@@ -240,7 +244,6 @@
 										<option value="3">CMS</option>
 										<option value="5">Qtributos y valores</option>
 										<option value="6">Característica</option>
-										<option value="4">Carrousels</option>
 									</select>
 								</div>
 								<div class="form-group">

@@ -56,7 +56,8 @@
 </header>
 <div >
 		<!-- Left side column. contains the logo and sidebar -->
-<img src="../modules/etranslation/views/img/biglogo.png" />
+<img src="../modules/etranslation/views/img/biglogo.png" style="margin-left:5%"/>
+<img src="../modules/etranslation/views/img/Official_prestashop_partner.jpg" style="margin-left:43%"/>
 <br/>
 
 
@@ -240,9 +241,10 @@
 										<option value="3">CMS</option>
 										<option value="5">Attributs et valeurs</option>
 										<option value="6">Caractéristiques</option>
-										<option value="4">Carrousels</option>
 									</select>
+									
 								</div>
+								
 								<div class="form-group">
 
 									<label>Champs à traduire:</label>
@@ -272,25 +274,33 @@
 											<input name="columns_to_translate[]" value="meta_keywords" type="checkbox"> Meta Keywords<br>
 										</div>
 									</div>
+									<div style="margin-left:23%;">
+										<iframe align="right" src="//www.youtube.com/embed/SI5getoiuVA?wmode=opaque" allowfullscreen="allowfullscreen" frameborder="0" id="fitvid81558"></iframe>
+									</div>
 								</div>
 
 								
 								<div class="form-group">
 									<label>Depuis le: </label>
 									<input style="width: 300px;" class="form-control" type="text" id="datedebut_id" name="datedebut_id" placeholder="YYYY-MM-JJ"/>
+									
 								</div>
 								<div class="form-group">
 									<label>Jusqu'au: </label>
 									<input style="width: 300px;" class="form-control" type="text" id="datefin_id" name="datefin_id" placeholder="YYYY-MM-JJ"/>
+									
 								</div>
 								
+
 
 							</div><!-- /.box-body -->
 
 							<div class="box-footer" style="margin-left:40%">
-								<button type="submit" class="btn btn-primary" name="doExport">✔ Envoyer pour traduction</buton>
+								<button type="submit" class="btn btn-primary" name="doExport">✔ Envoyer pour traduction </buton>
+								
+								
 							</div>
-					
+							
 
 
 					</div><!-- /.box -->
@@ -451,6 +461,7 @@
 					<strong>Date de dernière exécution</strong>. La date de dernière demande de traduction, elle permet d'extraire le contenu modifié après cette date.
 				</li>
 			</p>
+			
 		</section>
 		</div>
 		
