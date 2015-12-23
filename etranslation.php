@@ -28,21 +28,13 @@ class etranslation extends Module {
 		parent::__construct();
 
 		$this->displayName = $this->l('e-translation');
-		$this->description = $this->l('Vendez à l\'internationnal en traduisant votre site avec www.e-translation-agency.com,  l\'agence de traduction Nº1 dans e  e-commerce. Devis gratuit sans engagement / répétitions non facturées!.  Traducteurs natifs, diplômé en traductions et specialisés dans le secteur.  Traductions  multilingues optimisées  SEO . Traduction clé en main :   automatisation extraction des contenus (CMS, fiches produits...), intégration des traductions, identification des actualisations');
+		$this->description = $this->l('Go international by translating your website with www.e-translation-agency.com, the No.1 e-commerce translation agency.  Free, no-obligation quote / no charge for repetitions!  Our translators are native speakers, translation graduates and specialists in the relevant sector. Multilingual, SEO optimised translations. Turnkey translation: automatic content extraction (CMS pages, product sheets...), integration of the translations, detection of updates.');
 		$this->confirmUninstall = $this->l('Are you sure you want to delete this module ?');
+		
+		 /* Backward compatibility */
+		if (_PS_VERSION_ < '1.5')
+           require(_PS_MODULE_DIR_.$this->name.'/backward_compatibility/backward.php');
 	}
-
-
-
-	private function _razSql() {
-		return true;
-	}
-
-
-
-
-	
-
 
 
 
@@ -51,7 +43,7 @@ class etranslation extends Module {
 	public function getContent() {
 		// Retrocompatibility
 		
-		$this->initContext();
+		//$this->initContext();
 
 		
 	
@@ -164,7 +156,7 @@ class etranslation extends Module {
 					$product_rows = Db::getInstance()->ExecuteS($sql);
 					
 
-					$sql = 'SELECT id_cms FROM '._DB_PREFIX_.'cms WHERE date_add < "'.$datesecond.'"';
+					$sql = 'SELECT id_cms FROM '._DB_PREFIX_.'cms ';
 					$cms_rows = Db::getInstance()->ExecuteS($sql);  
 
 					$sql = 'SELECT id_category FROM '._DB_PREFIX_.'category WHERE date_add < "'.$datesecond.'"';
@@ -178,7 +170,7 @@ class etranslation extends Module {
 					$product_rows = Db::getInstance()->ExecuteS($sql);
 					
 					
-					$sql = 'SELECT id_cms FROM '._DB_PREFIX_.'cms WHERE date_add > "'.$datefirst.'"';
+					$sql = 'SELECT id_cms FROM '._DB_PREFIX_.'cms ';
 					$cms_rows = Db::getInstance()->ExecuteS($sql);
 					
 					$sql = 'SELECT id_category FROM '._DB_PREFIX_.'category WHERE date_add > "'.$datefirst.'"';
@@ -193,7 +185,7 @@ class etranslation extends Module {
 					$sql = 'SELECT id_product FROM '._DB_PREFIX_.'product WHERE date_add BETWEEN "'.$datefirst.'" AND "'.$datesecond.'"';
 					$product_rows = Db::getInstance()->ExecuteS($sql);
 					
-					$sql = 'SELECT id_cms FROM '._DB_PREFIX_.'cms WHERE date_add BETWEEN "'.$datefirst.'" AND "'.$datesecond.'"';
+					$sql = 'SELECT id_cms FROM '._DB_PREFIX_.'cms ';
 					$cms_rows = Db::getInstance()->ExecuteS($sql);
 					
 					$sql = 'SELECT id_category FROM '._DB_PREFIX_.'category WHERE date_add BETWEEN "'.$datefirst.'" AND "'.$datesecond.'"';
@@ -250,29 +242,13 @@ class etranslation extends Module {
 		
 		$isoUser = Language::getIsoById(intval($this->context->employee->id_lang));
 		
-		if ($isoUser == "fr")
-			return $this->display(__FILE__, 'views/templates/admin/setup_fr.tpl'); 
-		else if ($isoUser == "es")
-			return $this->display(__FILE__, 'views/templates/admin/setup_es.tpl'); 
-		else
-			return $this->display(__FILE__, 'views/templates/admin/setup_en.tpl'); 
+			return $this->display(__FILE__, 'views/templates/admin/setup.tpl'); 
 
 	}
 
 
 
 
-	private function initContext()
-	{
-		if (class_exists('Context'))
-			$this->context = Context::getContext();
-		else
-		{
-			global $smarty, $cookie;
-			$this->context = new StdClass();
-			$this->context->smarty = $smarty;
-			$this->context->cookie = $cookie;
-		}
-	}
+	
 
 }

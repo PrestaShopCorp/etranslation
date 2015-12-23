@@ -3,7 +3,7 @@
 	<name>etranslation</name>
 	<displayName><![CDATA[e-translation]]></displayName>
 	<version><![CDATA[2.0.1]]></version>
-	<description><![CDATA[Vendez &agrave; l&#039;internationnal en traduisant votre site avec www.e-translation-agency.com,  l&#039;agence de traduction N&ordm;1 dans e  e-commerce. Devis gratuit sans engagement / r&eacute;p&eacute;titions non factur&eacute;es!.  Traducteurs natifs, dipl&ocirc;m&eacute; en traductions et specialis&eacute;s dans le secteur.  Traductions  multilingues optimis&eacute;es  SEO . Traduction cl&eacute; en main :   automatisation extraction des contenus (CMS, fiches produits...), int&eacute;gration des traductions, identification des actualisations]]></description>
+	<description><![CDATA[Go international by translating your website with www.e-translation-agency.com, the No.1 e-commerce translation agency.  Free, no-obligation quote / no charge for repetitions!  Our translators are native speakers, translation graduates and specialists in the relevant sector. Multilingual, SEO optimised translations. Turnkey translation: automatic content extraction (CMS pages, product sheets...), integration of the translations, detection of updates.]]></description>
 	<author><![CDATA[Dream-IT]]></author>
 	<tab><![CDATA[i18n_localization]]></tab>
 	<confirmUninstall><![CDATA[Are you sure you want to delete this module ?]]></confirmUninstall>

@@ -63,11 +63,11 @@
 
 
 		<ul class='tabs'>
-			<li><a href='#tab1' style="width:15%">Send translation</a></li>
-			<li><a href='#tab2' style="width:15%">Import translation</a></li>
-			<li><a href='#tab3' style="width:25%">Send files for translation</a></li>
-			<li><a href='#tab4' style="width:10%">Cron</a></li>
-			<li><a href='#tab5' style="width:15%">Help</a></li>
+			<li><a href='#tab1' style="width:15%">{l s='Send translation' mod='etranslation'}</a></li>
+			<li><a href='#tab2' style="width:15%">{l s='Import translation' mod='etranslation'}</a></li>
+			<li><a href='#tab3' style="width:25%">{l s='Send files for translation' mod='etranslation'}</a></li>
+			<li><a href='#tab4' style="width:10%">{l s='Cron' mod='etranslation'}</a></li>
+			<li><a href='#tab5' style="width:15%">{l s='Help' mod='etranslation'}</a></li>
 		</ul>
 		<div id='tab1' class="table" style="margin-left:30px;width:80%">
 			<br/>
@@ -89,18 +89,18 @@
 					<!-- general form elements -->
 					<div class="box box-primary">
 					
-						<h4><i style="margin-left:15px">Before starting the extraction we recommend filling out the questionnaire on the following <a href="http://e-translation-agency.com/preparation/">page</a></i></h4>
+						<h4><i style="margin-left:15px">{l s='Before starting the extraction we recommend filling out the questionnaire on the following' mod='etranslation'} <a href="http://e-translation-agency.com/preparation/">{l s='page' mod='etranslation'}</a></i></h4>
 						<br>
 						<br>
 						
 						
 								<div class="form-group">
-									<label>Email Adress: </label>
+									<label>{l s='Email Adress:' mod='etranslation'}</label>
 									<input style="width: 300px;" class="form-control" type="text" name="email" value="{$et_email|escape:'htmlall':'UTF-8'}"/>
 								</div>
 								
 								<div class="form-group">
-									<label>Source Language: </label>
+									<label>{l s='Source Language:' mod='etranslation'}</label>
 										<select class="form-control"  name="export_id_lang" style="width: 300px;">
 											{foreach $langues_actives item=langue}
 											<option  value="{$langue.id_lang|escape:'htmlall':'UTF-8'}-{$langue.name|escape:'htmlall':'UTF-8'}">{$langue.name|escape:'htmlall':'UTF-8'}</option>
@@ -108,7 +108,7 @@
 										</select>
 								</div>
 								<div class="form-group">
-									<label style="margin-left:0px">Target Languages: </label>
+									<label style="margin-left:0px">{l s='Target Languages:' mod='etranslation'} </label>
 										<div id="export_dest_lang_id" style="float:left;width:500px;">
 											<div style="float: left; width: 33%">
 												<div >
@@ -233,43 +233,43 @@
 								</div>
 							</div>
 								<div class="form-group">
-									<label>Elements to Translate : </label>
+									<label>{l s='Elements to Translate :' mod='etranslation'} </label>
 									<select class="form-control" id="export_element_id" name="export_element_id" style="width: 300px;">
-										<option value="0">All Elements</option>
-										<option value="1">Produts</option>
-										<option value="2">Categories</option>
-										<option value="3">CMS</option>
-										<option value="5">Attributs and values</option>
-										<option value="6">Features</option>
+										<option value="0">{l s='All Elements' mod='etranslation'}</option>
+										<option value="1">{l s='Produts' mod='etranslation'}</option>
+										<option value="2">{l s='Categories' mod='etranslation'}</option>
+										<option value="3">{l s='CMS' mod='etranslation'}</option>
+										<option value="5">{l s='Attributs and values' mod='etranslation'}</option>
+										<option value="6">{l s='Features' mod='etranslation'}</option>
 									</select>
 								</div>
 								<div class="form-group">
 
-									<label>Fields to Translate:</label>
+									<label>{l s='Fields to Translate:' mod='etranslation'}</label>
 									<div id="columns_to_translate">
 										<div style="display: none;" class="category_title-container">
-											<input disabled="disabled" name="columns_to_translate[]" value="category_title" type="checkbox"> Title<br>
+											<input disabled="disabled" name="columns_to_translate[]" value="category_title" type="checkbox"> {l s='Title' mod='etranslation'}<br>
 										</div>
 										<div>
-											<input name="columns_to_translate[]" value="name" type="checkbox"> Name<br>
+											<input name="columns_to_translate[]" value="name" type="checkbox"> {l s='Name' mod='etranslation'}<br>
 										</div>
 										<div>
-											<input name="columns_to_translate[]" value="content" type="checkbox"> Content<br>
+											<input name="columns_to_translate[]" value="content" type="checkbox"> {l s='Content' mod='etranslation'}<br>
 										</div>
 										<div>
-											<input name="columns_to_translate[]" value="description" type="checkbox"> Description<br>
+											<input name="columns_to_translate[]" value="description" type="checkbox"> {l s='Description' mod='etranslation'}<br>
 										</div>
 										<div>
-											<input name="columns_to_translate[]" value="description_short" type="checkbox"> Shorte description<br>
+											<input name="columns_to_translate[]" value="description_short" type="checkbox"> {l s='Shorte description' mod='etranslation'}<br>
 										</div>
 										<div>
-											<input name="columns_to_translate[]" value="meta_title" type="checkbox"> Meta Title<br>
+											<input name="columns_to_translate[]" value="meta_title" type="checkbox"> {l s='Meta Title' mod='etranslation'}<br>
 										</div>
 										<div>
-											<input name="columns_to_translate[]" value="meta_description" type="checkbox"> Meta Description<br>
+											<input name="columns_to_translate[]" value="meta_description" type="checkbox"> {l s='Meta Description' mod='etranslation'}<br>
 										</div>
 										<div>
-											<input name="columns_to_translate[]" value="meta_keywords" type="checkbox"> Meta Keywords<br>
+											<input name="columns_to_translate[]" value="meta_keywords" type="checkbox"> {l s='Meta Keywords' mod='etranslation'}<br>
 										</div>
 									</div>
 									<div style="margin-left:23%;">
@@ -279,11 +279,11 @@
 
 								
 								<div class="form-group">
-									<label>Starting on a Given Date: </label>
+									<label>{l s='Starting on a Given Date:' mod='etranslation'} </label>
 									<input style="width: 300px;" class="form-control" type="text" id="datedebut_id" name="datedebut_id" placeholder="YYYY-MM-JJ"/>
 								</div>
 								<div class="form-group">
-									<label>Until a Given Date: </label>
+									<label>{l s='Until a Given Date:' mod='etranslation'} </label>
 									<input style="width: 300px;" class="form-control" type="text" id="datefin_id" name="datefin_id" placeholder="YYYY-MM-JJ"/>
 								</div>
 								
@@ -291,7 +291,7 @@
 							</div><!-- /.box-body -->
 
 							<div class="box-footer" style="margin-left:40%">
-								<button type="submit" class="btn btn-primary" name="doExport">✔ Send for traduction</buton>
+								<button type="submit" class="btn btn-primary" name="doExport">✔ {l s='Send for traduction' mod='etranslation'}</buton>
 							</div>
 					
 
@@ -306,7 +306,7 @@
 			<br/>
 	<form action="" method="post" enctype="multipart/form-data">
 		<div class="form-group">
-			<label>Langues: </label>
+			<label>{l s='Langues:' mod='etranslation'} </label>
 			<select class="form-control" name="import_id_lang" style="width: 300px;">
 				{foreach $langues_actives item=langue}
 				<option value="{$langue.id_lang|escape:'htmlall':'UTF-8'}">{$langue.name|escape:'htmlall':'UTF-8'}</option>
@@ -315,24 +315,24 @@
 			<input type="hidden" name="MAX_FILE_SIZE" value="{20*1024*1024|escape:'htmlall':'UTF-8'}" />
 		</div>
 		<div class="form-group">
-			<label>File to import: </label>
+			<label>{l s='File to import:' mod='etranslation'} </label>
 			<input style="width: 300px;" class="form-control" type="file" name="file_to_import"/>
 		</div>
 		
 		<div class="box-footer" style="margin-left:30%">
-			<button type="submit" class="btn btn-primary" name="doImport">✔ Import file</buton>
+			<button type="submit" class="btn btn-primary" name="doImport">✔ {l s='Import file' mod='etranslation'}</buton>
 		</div>
 		
 	</form>
 		</div>
 		<div id='tab3' class="table" style="margin-left:30px;width:80%">
-		<h3 style="margin-left:20px">Please select files to send for translation!</h3>
-		<i style="margin-left:35px">You can send banners, PDF files, logos with text...<i/>
+		<h3 style="margin-left:20px">{l s='Please select files to send for translation!' mod='etranslation'}</h3>
+		<i style="margin-left:35px">{l s='You can send banners, PDF files, logos with text...' mod='etranslation'}<i/>
 		<form action="" method="post" enctype="multipart/form-data">
 			<iframe height="450px" width ="100%" src="../modules/etranslation/views/templates/admin/index.html" frameBorder="0"></iframe>
 		
 			<div class="box-footer" style="margin-left:30%">
-			<button type="submit" class="btn btn-primary" name="sendfiles">✔ Send files</button>
+			<button type="submit" class="btn btn-primary" name="sendfiles">✔ {l s='Send files' mod='etranslation'}</button>
 			
 			</div>
 		</form>
@@ -343,17 +343,17 @@
 		<br/>
 		<form action="" method="post" enctype="multipart/form-data">
 			<div class="form-group">
-			<label>Email Address of Recipient: </label>
+			<label>{l s='Email Address of Recipient:' mod='etranslation'} </label>
 			<input style="width: 300px;" class="form-control" type="text" name="et_email" value="{$et_email|escape:'htmlall':'UTF-8'}"/>
 			</div>
 
 			<div class="form-group">
-				<label>Last Run Date:</label>
+				<label>{l s='Last Run Date:' mod='etranslation'}</label>
 				<input style="width: 300px;" class="form-control"  type="text" name="et_date_last_exec" value="{$et_date_last_exec|escape:'htmlall':'UTF-8'}" placeholder="yyyy-mm-dd hh:mm:ss"/>
 			</div>
 			
 			<div class="box-footer" style="margin-left:30%">
-			<button type="submit" class="btn btn-primary" name="submitForm">✔ Save</button>
+			<button type="submit" class="btn btn-primary" name="submitForm">✔ {l s='Save' mod='etranslation'}</button>
 			
 			</div>
 
@@ -369,89 +369,89 @@
 		<div class="content">
 			<section class="article">
 		
-			<h1 id="help_vosmodules-vosmodules">Presentation of the module</h1>
-				<p>The e-Translation module enables extracting the content of your prestashop website. It is compatible with the versions 1.4, 1.5 and 1.6 of prestashop</p>
-			<h2 id="help_vosmodules-notificationdemodules">Send translation</h2>
-			<p>This section enables you to filter the content to extract from your website to sort the information of your website. We recommend visiting our website to provide further details.</p>
+			<h1 id="help_vosmodules-vosmodules">{l s='Presentation of the module' mod='etranslation'}</h1>
+				<p>{l s='The e-Translation module enables extracting the content of your prestashop website. It is compatible with the versions 1.4, 1.5 and 1.6 of prestashop' mod='etranslation'}</p>
+			<h2 id="help_vosmodules-notificationdemodules">{l s='Send translation' mod='etranslation'}</h2>
+			<p>{l s='This section enables you to filter the content to extract from your website to sort the information of your website. We recommend visiting our website to provide further details.' mod='etranslation'}</p>
 			<p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border image-center" height="107" width="1171" src="../modules/etranslation/views/img/help/env-trd_en.png" alt="mod001-avertissementModules-fr.png?versi"></span>
 			</p>
 			<p>
 			<ul>
 				<li>
-					<strong>Email Address</strong>. email address, which will enable us to communicate with you. The quote will be sent to this address.
+					<strong>{l s='Email Address' mod='etranslation'}</strong>. {l s='email address, which will enable us to communicate with you. The quote will be sent to this address.' mod='etranslation'}
 				</li>
 				<li>
-					<strong>Source Language</strong>. The list reloads automatically according to the list of languages installed on your prestashop showcase. It is the language you wish to extract (the e-translation module does not enable extracting more than one language at a time).
+					<strong>{l s='Source Language' mod='etranslation'}</strong>. {l s='The list reloads automatically according to the list of languages installed on your prestashop showcase. It is the language you wish to extract (the e-translation module does not enable extracting more than one language at a time).' mod='etranslation'}
 				</li>
 				<li>
-					<strong>Target Languages</strong>. List of languages into which you wish to have your website translated.
+					<strong>{l s='Target Languages' mod='etranslation'}</strong>. {l s='List of languages into which you wish to have your website translated.' mod='etranslation'}
 				</li>
 				<li>
-					<strong>Elements to Translate</strong>. Content you wish to have translated.
+					<strong>{l s='Elements to Translate' mod='etranslation'}</strong>. {l s='Content you wish to have translated.' mod='etranslation'}
 					<br><ul>
 							<li>
-							<strong>All Element</strong>. If you want to have all the content of your website translated.
+							<strong>{l s='All Element' mod='etranslation'}</strong>. {l s='If you want to have all the content of your website translated.' mod='etranslation'}
 							</li>
 							<li>
-							<strong>Products</strong>. If you only want to have the list of products of your website translated.
+							<strong>{l s='Products' mod='etranslation'}</strong>. {l s='If you only want to have the list of products of your website translated.' mod='etranslation'}
 							</li>
-							<li><strong>Categories</strong>. . If you wish to have only product categories translated.
+							<li><strong>{l s='Categories' mod='etranslation'}</strong>. {l s='If you wish to have only product  categories translated.' mod='etranslation'}
 							</li>
-							<li><strong>CMS</strong>. If you wish to have only the text content of your website translated
+							<li><strong>{l s='CMS' mod='etranslation'}</strong>. {l s='If you wish to have only the text content of your website translated' mod='etranslation'}
 							</li>
 						</ul>
 				</li>
 				<li>
-					<strong>Fields to Translate</strong>. Types of content you wish to have translated for each element selected in the "Elements to Translate" section.
+					<strong>{l s='Fields to Translate' mod='etranslation'}</strong>.{l s=' Types of content you wish to have translated for each element selected in the "Elements to Translate" section.' mod='etranslation'}
 				</li>
 				<li>
-					<strong>Starting on a Given Date</strong>. If you wish to have the content added starting on a given date translated.
+					<strong>{l s='Starting on a Given Date' mod='etranslation'}</strong>. {l s='If you wish to have the content added starting on a given date translated.' mod='etranslation'}
 				</li>
 				<li>
-					<strong>Until a Given Date</strong>.  If you wish to have the content added to your website until a given date translated.
+					<strong>{l s='Until a Given Date' mod='etranslation'}</strong>.  {l s='If you wish to have the content added to your website until a given date translated.' mod='etranslation'}
 				</li>
 			</ul>
 			</p>
-		<h2 id="help_vosmodules-effectuerdesactionssurlesmodules">Import Translation</h2>
-			<p>This section enables importing the translation sent by e-translation.</p>
+		<h2 id="help_vosmodules-effectuerdesactionssurlesmodules">{l s='Import Translation' mod='etranslation'}</h2>
+			<p>{l s='This section enables importing the translation sent by e-translation.' mod='etranslation'}</p>
 			<p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border image-center" height="107" width="1171" src="../modules/etranslation/views/img/help/imp-trd_en.png" alt="mod001-avertissementModules-fr.png?versi"></span>
 			</p>
 			<p>
 			<ul>
 				<li>
-					<strong>Langues</strong>. Please use caution when selecting the imported language: the content of the selected language will be changed for the content of the XML file you are adding.
+					<strong>{l s='Langues' mod='etranslation'}</strong>. {l s='Please use caution when selecting the imported language: the content of the selected language will be changed for the content of the XML file you are adding.' mod='etranslation'}
 				</li>
 				<li>
-					<strong>Files to Import</strong>. On your local drive, select the location of the XML translation file sent by e-translation.
+					<strong>{l s='Files to Import' mod='etranslation'}</strong>. {l s='On your local drive, select the location of the XML translation file sent by e-translation.' mod='etranslation'}
 				</li>
 			</p>
-			<h2 id="help_vosmodules-effectuerdesactionssurlesmodules">Send Files for Translation</h2>
-			<p>This section enables selecting a list of files and images (banners, PDF files, logos...) with text for translation :</p>
+			<h2 id="help_vosmodules-effectuerdesactionssurlesmodules">{l s='Send Files for Translation' mod='etranslation'}</h2>
+			<p>{l s='This section enables selecting a list of files and images (banners, PDF files, logos...) with text for translation :' mod='etranslation'}</p>
 			<p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border image-center" height="356" width="881" src="../modules/etranslation/views/img/help/env-fil_en.png" alt="mod004-actionsModules-fr.PNG?version=1&amp;m"></span></p><div class="confluence-information-macro confluence-information-macro-information">
 			<ul>
 				<li>
-					<strong>Add files</strong>. Select files to send for translation.
+					<strong>{l s='Add files' mod='etranslation'}</strong>. {l s='Select files to send for translation.' mod='etranslation'}
 				</li>
 				<li>
-					<strong>Start upload</strong>. To start the upload of the selected files.
+					<strong>{l s='Start upload' mod='etranslation'}</strong>. {l s='To start the upload of the selected files.' mod='etranslation'}
 				</li>
 				<li>
-					<strong>Cancel upload</strong>. To stop the upload of the selected files.
+					<strong>{l s='Cancel upload' mod='etranslation'}</strong>.{l s=' To stop the upload of the selected files.' mod='etranslation'}
 				</li>
 				<li>
-					<strong>Delete</strong>. To delete all the selected files.
+					<strong>{l s='Delete' mod='etranslation'}</strong>. {l s='To delete all the selected files.' mod='etranslation'}
 				</li>
 			</p>
 			
-			<h2 id="help_vosmodules-effectuerdesactionssurlesmodules">Cron</h2>
-			<p>This section enables extracting the untranslated or unedited content of your website starting on a given date.</p>
+			<h2 id="help_vosmodules-effectuerdesactionssurlesmodules">{l s='Cron' mod='etranslation'}</h2>
+			<p>{l s='This section enables extracting the untranslated or unedited content of your website starting on a given date.' mod='etranslation'}</p>
 			<p><span class="confluence-embedded-file-wrapper image-center-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border image-center" height="356" width="881" src="../modules/etranslation/views/img/help/cron_en.png" alt="mod004-actionsModules-fr.PNG?version=1&amp;m"></span></p><div class="confluence-information-macro confluence-information-macro-information">
 			<ul>
 				<li>
-					<strong>Email Address</strong>. This field contains your email address, which we will use to communicate with you. Your quote will be sent to this address.
+					<strong>{l s='Email Address' mod='etranslation'}</strong>. {l s='This field contains your email address, which we will use to communicate with you. Your quote will be sent to this address.' mod='etranslation'}
 				</li>
 				<li>
-					<strong>Last Run Date</strong>. Date of the last translation request you sent. Enables extracting the content edited after this date.
+					<strong>{l s='Last Run Date' mod='etranslation'}</strong>. {l s='Date of the last translation request you sent. Enables extracting the content edited after this date.' mod='etranslation'}
 				</li>
 			</p>
 		</section>
