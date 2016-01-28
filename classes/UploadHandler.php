@@ -7,7 +7,13 @@
  * @license   http://www.opensource.org/licenses/MIT
 */
 
-class UploadHandler
+include(dirname(__FILE__). '/../../../config/config.inc.php');
+include(dirname(__FILE__). '/../../../init.php');
+
+/* will include module file */
+include(dirname(__FILE__). '/../etranslation.php');
+
+class UploadHandler 
 {
 
     protected $options;
@@ -158,6 +164,7 @@ class UploadHandler
             $this->initialize();
         }
     }
+	
 
     protected function initialize() {
         switch ($this->get_server_var('REQUEST_METHOD')) {
@@ -185,19 +192,24 @@ class UploadHandler
         $https = !empty($_SERVER['HTTPS']) && strcasecmp($_SERVER['HTTPS'], 'on') === 0 ||
             !empty($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
                 strcasecmp($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') === 0;
+				//$test=Tools::Tools::substr('alami', 1, 3);
+								
+			//die(Tools::substr(_PS_VERSION_, 0, 3));
         return
             ($https ? 'https://' : 'http://').
             (!empty($_SERVER['REMOTE_USER']) ? $_SERVER['REMOTE_USER'].'@' : '').
             (isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : ($_SERVER['SERVER_NAME'].
             ($https && $_SERVER['SERVER_PORT'] === 443 ||
             $_SERVER['SERVER_PORT'] === 80 ? '' : ':'.$_SERVER['SERVER_PORT']))).
-            substr($_SERVER['SCRIPT_NAME'],0, strrpos($_SERVER['SCRIPT_NAME'], '/'));
+            Tools::substr($_SERVER['SCRIPT_NAME'],0, strrpos($_SERVER['SCRIPT_NAME'], '/'));
+			
+			
     }
 
-    protected function get_user_id() {
-        @session_start();
+   /* protected function get_user_id() {
+       // @session_start();
         return session_id();
-    }
+    }*/
 
     protected function get_user_path() {
         if ($this->options['user_dirs']) {
@@ -337,7 +349,7 @@ class UploadHandler
 
     function get_config_bytes($val) {
         $val = trim($val);
-        $last = strtolower($val[strlen($val)-1]);
+        $last = Tools::strtolower($val[Tools::strlen($val)-1]);
         switch($last) {
             case 'g':
                 $val *= 1024;
@@ -490,7 +502,7 @@ class UploadHandler
             if (!empty($extensions)) {
                 $parts = explode('.', $name);
                 $extIndex = count($parts) - 1;
-                $ext = strtolower(@$parts[$extIndex]);
+                $ext = Tools::strtolower(@$parts[$extIndex]);
                 if (!in_array($ext, $extensions)) {
                     $parts[$extIndex] = $extensions[0];
                     $name = implode('.', $parts);
@@ -505,7 +517,7 @@ class UploadHandler
         // Remove path information and dots around the filename, to prevent uploading
         // into different directories or replacing hidden system files.
         // Also remove control characters and spaces (\x00..\x20) around the filename:
-        $name = trim(basename(stripslashes($name)), ".\x00..\x20");
+        $name = trim(basename(Tools::stripslashes($name)), ".\x00..\x20");
         // Use a timestamp for empty filenames:
         if (!$name) {
             $name = str_replace('.', '-', microtime(true));
@@ -667,7 +679,7 @@ class UploadHandler
         }
         list($file_path, $new_file_path) =
             $this->get_scaled_image_file_paths($file_name, $version);
-        $type = strtolower(substr(strrchr($file_name, '.'), 1));
+        $type = Tools::strtolower(Tools::substr(strrchr($file_name, '.'), 1));
         switch ($type) {
             case 'jpg':
             case 'jpeg':
@@ -894,7 +906,7 @@ class UploadHandler
                 $success = $image->setImagePage($max_width, $max_height, 0, 0);
             }
         }
-        $type = strtolower(substr(strrchr($file_name, '.'), 1));
+        $type = Tools::strtolower(Tools::substr(strrchr($file_name, '.'), 1));
         switch ($type) {
             case 'jpg':
             case 'jpeg':
@@ -975,7 +987,7 @@ class UploadHandler
                 exec($cmd, $output, $error);
                 if (!$error && !empty($output)) {
                     // image.jpg JPEG 1920x1080 1920x1080+0+0 8-bit sRGB 465KB 0.000u 0:00.000
-                    $infos = preg_split('/\s+/', substr($output[0], strlen($file_path)));
+                    $infos = preg_split('/\s+/', Tools::substr($output[0], Tools::strlen($file_path)));
                     $dimensions = preg_split('/x/', $infos[2]);
                     return $dimensions;
                 }
@@ -1122,7 +1134,8 @@ class UploadHandler
     }
 
     protected function get_query_param($id) {
-        return @$_GET[$id];
+       return Tools::getValue($id);
+	   // return @$_GET[$id];
     }
 
     protected function get_server_var($id) {
@@ -1134,16 +1147,16 @@ class UploadHandler
     }
 
     protected function get_version_param() {
-        return basename(stripslashes($this->get_query_param('version')));
+        return basename(Tools::stripslashes($this->get_query_param('version')));
     }
 
     protected function get_singular_param_name() {
-        return substr($this->options['param_name'], 0, -1);
+        return Tools::substr($this->options['param_name'], 0, -1);
     }
 
     protected function get_file_name_param() {
         $name = $this->get_singular_param_name();
-        return basename(stripslashes($this->get_query_param($name)));
+        return basename(Tools::stripslashes($this->get_query_param($name)));
     }
 
     protected function get_file_names_params() {
@@ -1152,13 +1165,13 @@ class UploadHandler
             return null;
         }
         foreach ($params as $key => $value) {
-            $params[$key] = basename(stripslashes($value));
+            $params[$key] = basename(Tools::stripslashes($value));
         }
         return $params;
     }
 
     protected function get_file_type($file_path) {
-        switch (strtolower(pathinfo($file_path, PATHINFO_EXTENSION))) {
+        switch (Tools::strtolower(pathinfo($file_path, PATHINFO_EXTENSION))) {
             case 'jpeg':
             case 'jpg':
                 return 'image/jpeg';
@@ -1235,8 +1248,8 @@ class UploadHandler
     public function generate_response($content, $print_response = true) {
         $this->response = $content;
         if ($print_response) {
-            $json = json_encode($content);
-            $redirect = stripslashes($this->get_query_param('redirect'));
+            $json = Tools::jsonEncode($content);
+            $redirect = Tools::stripslashes($this->get_query_param('redirect'));
             if ($redirect) {
                 $this->header('Location: '.sprintf($redirect, rawurlencode($json)));
                 return;

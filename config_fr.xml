@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>etranslation</name>
+	<displayName><![CDATA[e-translation]]></displayName>
+	<version><![CDATA[2.0.1]]></version>
+	<description><![CDATA[Go international by translating your website with www.e-translation-agency.com, the No.1 e-commerce translation agency.  Free, no-obligation quote / no charge for repetitions!  Our translators are native speakers, translation graduates and specialists in the relevant sector. Multilingual, SEO optimised translations. Turnkey translation: automatic content extraction (CMS pages, product sheets...), integration of the translations, detection of updates.]]></description>
+	<author><![CDATA[Dream-IT]]></author>
+	<tab><![CDATA[i18n_localization]]></tab>
+	<confirmUninstall><![CDATA[Etes vous sûr de supprimer ce module]]></confirmUninstall>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>
